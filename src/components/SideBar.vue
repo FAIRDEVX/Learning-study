@@ -13,7 +13,7 @@
         <h3>Menu</h3>
 
         <div class="menu">
-            <router-link class="button" to="/">
+            <router-link class="button" to="/main">
                 <span class="material-icons">home</span>
                 <span class="text">Main</span>
             </router-link>
@@ -23,27 +23,27 @@
                 <span class="text">Courses</span>
             </router-link>
 
-            <router-link class="button" to="/">
+            <router-link class="button" to="/schedule">
                 <span class="material-icons">today</span>
                 <span class="text">Schedule</span>
             </router-link>
 
-            <router-link class="button" to="/">
+            <router-link class="button" to="/materials">
                 <span class="material-icons">import_contacts</span>
                 <span class="text">Materials</span>
             </router-link>
 
-            <router-link class="button" to="/">
+            <router-link class="button" to="/certificates">
                 <span class="material-icons">card_membership</span>
                 <span class="text">Certificates</span>
             </router-link>
 
-            <router-link class="button" to="/">
+            <router-link class="button" to="/messages">
                 <span class="material-icons">question_answer</span>
                 <span class="text">Messages</span>
             </router-link>
 
-            <router-link class="button" to="/">
+            <router-link class="button" to="/setting">
                 <span class="material-icons">settings</span>
                 <span class="text">Setting</span>
             </router-link>
@@ -70,7 +70,6 @@ aside {
     min-height: 100vh;
     overflow: hidden;
     padding: 1rem;
-
     background-color: var(--dark);
     color: var(--light);
 
@@ -86,7 +85,6 @@ aside {
         display: flex;
         justify-content: flex-end;
         margin-bottom: 1rem;
-
         position: relative;
         top: 0;
         transition: 0.2s ease-out;
@@ -115,6 +113,13 @@ aside {
         transition: 0.3s ease-out;
     }
 
+    h3 {
+        color: var(--grey);
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+
     .menu {
         margin: 0 -1rem;
 
@@ -137,12 +142,17 @@ aside {
                 transition: 0.2s ease-out;
             }
 
-            &:hover {
+            &:hover,
+            &.router-link-exact-active {
                 background-color: var(--dark-alt);
 
                 .material-icons .text {
                     color: var(--primary);
                 }
+            }
+
+            &.router-link-exact-active {
+                border-right: 5px solid var(--primary);
             }
 
         }

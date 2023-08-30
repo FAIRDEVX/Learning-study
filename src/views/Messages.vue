@@ -1,7 +1,7 @@
 <template>
-    <main class="about-page">
-        <h1>About</h1>
-         <p>This is About page</p>
+    <main class="messages-page">
+        <h1>Messages</h1>
+         <p>This is Messages page</p>
     </main>
 </template>
 <script>
