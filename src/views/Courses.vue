@@ -1,9 +1,9 @@
 <template>
-    <main class="courses-page">
+    <main class="coures-page">
         <h1>Courses</h1>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="height: 80vh; overflow: scroll;">
 
                     <!-- Card 1 Video-->
                     <div class="card mb-3" style="max-width: 580px;" @click="ToggleCardVideo">
@@ -74,6 +74,74 @@
                         </div>
                     </div>
 
+                    <!-- Card 5 ฯ -->
+                    <div class="card mb-3" style="max-width: 580px;" @click="ToggleCardVue">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://www.tatvasoft.com/outsourcing/wp-content/uploads/2021/10/What-is-Vue-js-1-1.jpg"
+                                    class="img-fluid rounded-start" alt="Learning strategy">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">What is Vue js ?</h5>
+                                    <p class="card-text">Vue.js is an open-source model–view–viewmodel front end JavaScript
+                                        library for building user interfaces and single-page applications.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 ฯ -->
+                    <div class="card mb-3" style="max-width: 580px;" @click="ToggleCardReact">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://i.ytimg.com/vi/JPT3bFIwJYA/maxresdefault.jpg"
+                                    class="img-fluid rounded-start" alt="Learning strategy">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">What is React js?</h5>
+                                    <p class="card-text">React is a free and open-source front-end JavaScript library for
+                                        building user interfaces based on components.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 ฯ -->
+                    <div class="card mb-3" style="max-width: 580px;" @click="ToggleCardNuxt">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://miro.medium.com/v2/resize:fit:1060/1*mdnb-01PyriDk4O_HbX63w.png"
+                                    class="img-fluid rounded-start" alt="Learning strategy">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">What is nuxt js ?</h5>
+                                    <p class="card-text">Nuxt.js is a free and open source JavaScript library based on
+                                        Vue.js, Node.js, Vite and Babel.js.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 ฯ -->
+                    <div class="card mb-3" style="max-width: 580px;" @click="ToggleCardNext">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://images.ctfassets.net/c63hsprlvlya/IacLLeOBR5WCvdCPqKuff/6860b5cc464c4f54703a2befa3f706b4/nextjs3.webp"
+                                    class="img-fluid rounded-start" alt="Learning strategy">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">what is next js ?</h5>
+                                    <p class="card-text">Next.js is an open-source web development framework created by the
+                                        private company Vercel providing React-based web applications.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Video -->
@@ -105,10 +173,11 @@
                     </div>
 
                     <!-- Video Youtube -->
-                    <iframe v-if="showIframeYoutube" width="560" height="315"
+                    <iframe v-if="showIframeYoutube" width="560" height="315" class="center"
                         src="https://www.youtube.com/embed/3pZ6lMlqImA?autoplay=1&mute=1" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
+
 
                     <div class="col-md-10">
                         <div v-if="showTitleCardYoutube" class="card-body-title">
@@ -174,7 +243,8 @@
                     </div>
                 </div>
 
-            </div>
+          
+        </div>
         </div>
     </main>
 </template>
@@ -190,7 +260,8 @@ export default {
             showIframeCarousel: false,
             showTitleCardCarousel: false,
             showIframeWegGL: false,
-            showTitleCardWebGL: false
+            showTitleCardWebGL: false,
+            cardLocked: false,
         }
     },
     methods: {
@@ -198,7 +269,6 @@ export default {
             this.showIframe = !this.showIframe;
             this.showTitleCard = !this.showTitleCard;
 
-            // ซ่อน Card อื่นๆ
             this.showIframeYoutube = false;
             this.showTitleCardYoutube = false;
             this.showIframeCarousel = false;
@@ -210,7 +280,6 @@ export default {
             this.showIframeYoutube = !this.showIframeYoutube;
             this.showTitleCardYoutube = !this.showTitleCardYoutube;
 
-            // ซ่อน Card อื่นๆ
             this.showIframe = false;
             this.showTitleCard = false;
             this.showIframeCarousel = false;
@@ -222,7 +291,6 @@ export default {
             this.showIframeCarousel = !this.showIframeCarousel;
             this.showTitleCardCarousel = !this.showTitleCardCarousel;
 
-            // ซ่อน Card อื่นๆ
             this.showIframe = false;
             this.showTitleCard = false;
             this.showIframeYoutube = false;
@@ -234,7 +302,6 @@ export default {
             this.showIframeWegGL = !this.showIframeWegGL;
             this.showTitleCardWebGL = !this.showTitleCardWebGL;
 
-            // ซ่อน Card อื่นๆ
             this.showIframe = false;
             this.showTitleCard = false;
             this.showIframeYoutube = false;
@@ -247,16 +314,20 @@ export default {
 </script>
 
 <style scoped>
-.courses-page {
-    background-color: #f5f5f5;
+.container {
+    background-color: white;
 }
 
 .card {
     display: flex;
     flex-direction: row;
     cursor: pointer;
+    overflow: scroll;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 .card-title {
     font-size: 1.25rem;
 }
@@ -272,8 +343,10 @@ export default {
 }
 
 .card img {
-    object-fit: cover;
     max-height: 150px;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
 }
 
 iframe {
@@ -306,5 +379,4 @@ video {
         width: 100%;
         height: auto;
     }
-}
-</style>
+}</style>
