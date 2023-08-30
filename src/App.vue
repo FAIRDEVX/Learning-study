@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div class="app">
+      <router-view />
   </div>
 </template>
 
@@ -9,6 +9,6 @@
 
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>
