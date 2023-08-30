@@ -9,8 +9,8 @@ const router = createRouter({
             component: Home
         },
         {
-            path: '/about',
-            component: () => import('../views/About.vue')
+            path: '/courses',
+            component: () => import('../views/Courses.vue')
         },
         {
             path: '/schedule',

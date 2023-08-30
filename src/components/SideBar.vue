@@ -18,7 +18,7 @@
                 <span class="text">Main</span>
             </router-link>
 
-            <router-link class="button" to="/about">
+            <router-link class="button" to="/courses">
                 <span class="material-icons">chrome_reader_mode</span>
                 <span class="text">Courses</span>
             </router-link>
@@ -47,7 +47,15 @@
                 <span class="material-icons">settings</span>
                 <span class="text">Setting</span>
             </router-link>
+        </div>
 
+        <div class="flex"></div>
+
+        <div class="menu">
+            <router-link class="button" to="/logout">
+                <span class="material-icons">logout</span>
+                <span class="text">Logout</span>
+            </router-link>
         </div>
     </aside>
 </template>
@@ -55,10 +63,11 @@
 <script setup>
 import { ref } from 'vue'
 
-const is_expanded = ref(false)
+const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 
 const ToggleMenu = () => {
     is_expanded.value = !is_expanded.value
+    localStorage.setItem("is_expanded", is_expanded.value)
 }
 </script>
 
@@ -72,6 +81,11 @@ aside {
     padding: 1rem;
     background-color: var(--dark);
     color: var(--light);
+    transition: 0.2s ease-out;
+
+    .flex {
+        flex: 1 1 0;
+    }
 
     .logo {
         margin-bottom: 1rem;
